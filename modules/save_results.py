@@ -2,9 +2,7 @@ import csv
 
 
 def append_result(result):
-
     dict_result = result.dict()
-    print(dict_result)
     with open('results.csv', mode='a', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=dict_result.keys())
 
