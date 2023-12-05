@@ -15,6 +15,12 @@ class FormDataModel(BaseModel):
     experience: int
 
 
+class ResultModel(BaseModel):
+    form_data: FormDataModel
+    test_case: list
+    user_answer: str
+    time: float
+
 @app.get("/")
 async def root():
     return FileResponse("landing.html")
@@ -26,14 +32,9 @@ async def tests():
 
 
 @app.post("/result")
-async def result(
-        form_data: FormDataModel,
-        current_test: str,
-        answer: str,
-        time: int,
-):
-    test_result = {"form_data": form_data, "current_test": current_test, "answer": answer, "time": time}
-    return append_result(test_result)
+async def result(test_result: ResultModel):
+    print(test_result)
+    # return append_result(test_result)
 
 
 # @app.post("/experiment", (req, res) => {
