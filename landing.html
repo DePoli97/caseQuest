@@ -74,12 +74,12 @@
         function checkUserParticipation() {
             let participationCount = localStorage.getItem('participationCount') || 0;
 
-            if (participationCount >= 3) {
-                alert("You have already participated three times. Thank you!");
-                window.close();
-                // if user's only tab:
-                window.location.href = "https://www.google.com";
-            }
+            // if (participationCount >= 3) {
+            //     alert("You have already participated three times. Thank you!");
+            //     window.close();
+            //     // if user's only tab:
+            //     window.location.href = "https://www.google.com";
+            // }
 
             if (participationCount) {
                 document.getElementById('age').value = localStorage.getItem('age');
@@ -115,7 +115,7 @@
     <p>In this study, we aim to investigate whether reading speed is affected by the style of composed identifiers.</p>
     <p>Please take a moment to provide some demographic information before starting the experiment.</p>
 
-    <form action="experiment" method="get" onsubmit="saveResult()">
+    <form action="experiment.html" method="get" onsubmit="saveResult()">
         <label for="age">Age:</label>
         <input type="number" id="age" name="age" required oninput="validateExperience()" max="100">
 

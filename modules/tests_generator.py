@@ -5,12 +5,12 @@ sentences = []
 
 
 def read_file():
-    with open("words", "r") as file:
+    with open("words.txt", "r") as file:
         for line in file:
             sentences.append([couples.strip() for couples in line.split("|")])
 
 
-def generateTests():
+def generate_tests():
     tests = {}
     for i in range(tests_for_session):
         # sentence example:
