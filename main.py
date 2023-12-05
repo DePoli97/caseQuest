@@ -9,17 +9,14 @@ app = FastAPI()
 read_file()
 
 
-class FormDataModel(BaseModel):
+class ResultModel(BaseModel):
     age: int
     gender: str
     experience: int
+    case_type: str
+    is_correct_answer: bool
+    time: int
 
-
-class ResultModel(BaseModel):
-    form_data: FormDataModel
-    test_case: list
-    user_answer: str
-    time: float
 
 @app.get("/")
 async def root():
@@ -34,7 +31,7 @@ async def tests():
 @app.post("/result")
 async def result(test_result: ResultModel):
     print(test_result)
-    # return append_result(test_result)
+    return append_result(test_result)
 
 
 # @app.post("/experiment", (req, res) => {

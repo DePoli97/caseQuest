@@ -21,7 +21,7 @@ def generate_tests():
             if case_type == "kebab":
                 sentence[j] = sentence[j].replace(" ", "-")
             else:
-                sentence[j] = sentence[j].split(" ")[0] + sentence[j].split(" ")[1].capitalize()
+                sentence[j] = sentence[j][0] + sentence[j][1].capitalize()
         test = {
             "case_answer": random.choice(sentence),
             "case_type": case_type,

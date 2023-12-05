@@ -53,24 +53,25 @@
             fetch(getBaseUrl() + '/tests', {
                 method: 'GET'
             })
-            .then(response => response.json())
-            .then(data => {
-                // Handle the JSON data
-                console.log(data);
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the JSON data
+                    console.log(data);
 
-                // Now you can access the data and use it in your frontend
-                // For example, you can iterate through the objects
-                Object.values(data).forEach(testCase => {
-                    console.log(testCase.case_answer);  // Accessing case_answer property
-                    console.log(testCase.case_type);    // Accessing case_type property
-                    console.log(testCase.sentence);      // Accessing sentence property
-                    // Add your logic to use the data as needed
+                    tests = Object.values(data);
+                    // Now you can access the data and use it in your frontend
+                    // For example, you can iterate through the objects
+                    Object.values(data).forEach(testCase => {
+                        console.log(testCase.case_answer);  // Accessing case_answer property
+                        console.log(testCase.case_type);    // Accessing case_type property
+                        console.log(testCase.sentence);      // Accessing sentence property
+                        // Add your logic to use the data as needed
+                    });
+                })
+                .catch(error => {
+                    // Handle errors, such as network issues or invalid JSON response
+                    console.error('Error fetching data:', error.message);
                 });
-            })
-            .catch(error => {
-                // Handle errors, such as network issues or invalid JSON response
-                console.error('Error fetching data:', error.message);
-            });
         }
 
 
@@ -84,7 +85,11 @@
                 // timer stop
                 elapsed = performance.now() - start;
                 document.getElementById("time").innerHTML = String(elapsed / 1000) + " s";
-                send_result(current_selection, current_selection, elapsed / 1000)
+                send_result({
+                    case_answer: tests[0].case_answer,
+                    case_type: tests[0].case_type,
+                    sentence: tests[0].sentence
+                }, document.getElementById(current_selection).innerHTML, elapsed / 1000)
                 document.getElementById(current_selection).style.backgroundColor = "green";
             } else {
                 // timer start
@@ -96,45 +101,52 @@
 
 
         function send_result(current_test, user_answer, time) {
-            fetch (getBaseUrl() + '/result', {
+            let form_data = {};
+            formData.forEach((value, key) => form_data[key] = value);
+
+            console.log(form_data, current_test, user_answer, time);
+
+            fetch(getBaseUrl() + '/result', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    FormData,
-                    current_test,
-                    user_answer,
-                    time
+                    age: urlParams.get('age'),
+                    gender: urlParams.get('gender'),
+                    experience: urlParams.get('experience'),
+                    case_type: current_test.case_type,
+                    is_correct_answer: current_test.case_answer === user_answer,
+                    time: time,
                 })
             })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Server acknowledged the request.');
-                } else {
-                    console.error('Server returned an error:', response.statusText);
-                }
-            })
-            .catch(error => {
-                console.error('Error during fetch:', error);
-            });
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Server acknowledged the request.');
+                    } else {
+                        console.error('Server returned an error:', response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during fetch:', error);
+                });
         }
     </script>
 </head>
 
 <body onload="getTests()">
-    <div class="grid-container">
-        <div></div>
-        <div id="ArrowUp" class="grid-item">move-source</div>
-        <div></div>
-        <div id="ArrowLeft" class="grid-item">mover-sound</div>
-        <div id="sentence" class="grid-item">move south</div>
-        <div id="ArrowRight" class="grid-item">move-south</div>
-        <div></div>
-        <div id="ArrowDown" class="grid-item">more-south</div>
-        <div></div>
-    </div>
-    <p id="time"></p>
+<div class="grid-container">
+    <div></div>
+    <div id="ArrowUp" class="grid-item">move-source</div>
+    <div></div>
+    <div id="ArrowLeft" class="grid-item">mover-sound</div>
+    <div id="sentence" class="grid-item">move south</div>
+    <div id="ArrowRight" class="grid-item">move-south</div>
+    <div></div>
+    <div id="ArrowDown" class="grid-item">more-south</div>
+    <div></div>
+</div>
+<p id="time"></p>
 </body>
 
 </html>
