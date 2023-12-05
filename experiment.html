@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Reading Experiment</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px; /* Adjust the gap as needed */
+        }
+
+        .grid-item {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        let tests;
+
+        // Function to extract the base URL
+        function getBaseUrl() {
+            const url = window.location.href;
+            const pathArray = url.split('/');
+            const protocol = pathArray[0];
+            const host = pathArray[2];
+            return protocol + '//' + host;
+        }
+
+        // Get user Data
+        const urlParams = new URLSearchParams(window.location.search);
+        const formData = new FormData();
+        formData.append('age', urlParams.get('age'));
+        formData.append('gender', urlParams.get('gender'));
+        formData.append('experience', urlParams.get('experience'));
+
+        function getTests() {
+            fetch(getBaseUrl() + '/tests', {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the JSON data
+                console.log(data);
+
+                // Now you can access the data and use it in your frontend
+                // For example, you can iterate through the objects
+                Object.values(data).forEach(testCase => {
+                    console.log(testCase.case_answer);  // Accessing case_answer property
+                    console.log(testCase.case_type);    // Accessing case_type property
+                    console.log(testCase.sentence);      // Accessing sentence property
+                    // Add your logic to use the data as needed
+                });
+            })
+            .catch(error => {
+                // Handle errors, such as network issues or invalid JSON response
+                console.error('Error fetching data:', error.message);
+            });
+        }
+
+
+        let previous_selection, current_selection;
+        let start, elapsed;
+        document.addEventListener("keydown", function (event) {
+            previous_selection = current_selection;
+            current_selection = event.key;
+            document.getElementById(current_selection).style.backgroundColor = "red";
+            if (previous_selection === current_selection) {
+                // timer stop
+                elapsed = performance.now() - start;
+                document.getElementById("time").innerHTML = String(elapsed / 1000) + " s";
+                document.getElementById(current_selection).style.backgroundColor = "green";
+            } else {
+                // timer start
+                document.getElementById("time").innerHTML = '';
+                start = performance.now();
+                document.getElementById(previous_selection).style.backgroundColor = "white";
+            }
+        });
+
+
+        function send_result(current_test, user_answer, time) {
+            fetch (getBaseUrl() + '/result', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    FormData,
+                    current_test,
+                    user_answer,
+                    time
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Server acknowledged the request.');
+                } else {
+                    console.error('Server returned an error:', response.statusText);
+                }
+            })
+            .catch(error => {
+                console.error('Error during fetch:', error);
+            });
+        }
+    </script>
+</head>
+
+<body onload="getTests()">
+    <div class="grid-container">
+        <div></div>
+        <div id="ArrowUp" class="grid-item">move-source</div>
+        <div></div>
+        <div id="ArrowLeft" class="grid-item">mover-sound</div>
+        <div id="sentence" class="grid-item">move south</div>
+        <div id="ArrowRight" class="grid-item">move-south</div>
+        <div></div>
+        <div id="ArrowDown" class="grid-item">more-south</div>
+        <div></div>
+    </div>
+    <p id="time"></p>
+</body>
+
+</html>
