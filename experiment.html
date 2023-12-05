@@ -84,6 +84,7 @@
                 // timer stop
                 elapsed = performance.now() - start;
                 document.getElementById("time").innerHTML = String(elapsed / 1000) + " s";
+                send_result(current_selection, current_selection, elapsed / 1000)
                 document.getElementById(current_selection).style.backgroundColor = "green";
             } else {
                 // timer start
