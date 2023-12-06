@@ -9,7 +9,7 @@ export default {
     this.startTime = performance.now()
   },
   props: {
-    completed: Boolean,
+    completedObj: Object,
     test: Object,
     tutorial: Boolean
   },
@@ -20,12 +20,6 @@ export default {
     }
   },
   methods: {
-    async sendResult() {
-      if (this.tutorial) {
-        return
-      }
-      await this.$store.dispatch('sendResult', test_result)
-    },
     async selectResponse(event) {
       let endTime = performance.now()
 
@@ -54,6 +48,7 @@ export default {
       }
       await this.$store.dispatch('saveResult', result)
       this.completed = true
+      this.completedObj.completed = true
     }
   }
 }
