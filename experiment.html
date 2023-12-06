@@ -32,6 +32,8 @@
     </style>
     <script>
         let tests;
+        let camel_tests;
+        let kebab_tests;
 
         // Function to extract the base URL
         function getBaseUrl() {
@@ -44,10 +46,6 @@
 
         // Get user Data
         const urlParams = new URLSearchParams(window.location.search);
-        const formData = new FormData();
-        formData.append('age', urlParams.get('age'));
-        formData.append('gender', urlParams.get('gender'));
-        formData.append('experience', urlParams.get('experience'));
 
         function getTests() {
             fetch(getBaseUrl() + '/tests', {
@@ -56,9 +54,11 @@
                 .then(response => response.json())
                 .then(data => {
                     // Handle the JSON data
-                    console.log(data);
 
                     tests = Object.values(data);
+                    camel_tests = tests[0]
+                    kebab_tests = tests[1]
+                    console.log(camel_tests, kebab_tests)
                     // Now you can access the data and use it in your frontend
                     // For example, you can iterate through the objects
                     Object.values(data).forEach(testCase => {
@@ -101,10 +101,8 @@
 
 
         function send_result(current_test, user_answer, time) {
-            let form_data = {};
-            formData.forEach((value, key) => form_data[key] = value);
 
-            console.log(form_data, current_test, user_answer, time);
+            console.log(current_test, user_answer, time)
 
             fetch(getBaseUrl() + '/result', {
                 method: 'POST',

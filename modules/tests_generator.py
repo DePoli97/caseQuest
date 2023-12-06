@@ -34,6 +34,7 @@ def generate_camel_tests(tests):
         camel_tests_sentence = [test["sentence"][i].split(" ")[0] + test["sentence"][i].split(" ")[1].capitalize() for i
                                 in range(len(test["sentence"]))]
         camel_test = {
+            "answer": test["case_answer"],
             "case_answer": camel_tests_sentence[case_answer_index],
             "case_type": "camel",
             "sentence": camel_tests_sentence
@@ -48,6 +49,7 @@ def generate_kebab_tests(tests):
         case_answer_index = test["sentence"].index(test["case_answer"])
         kebab_tests_sentence = [test["sentence"][i].replace(" ", "-") for i in range(len(test["sentence"]))]
         kebab_test = {
+            "answer": test["case_answer"],
             "case_answer": kebab_tests_sentence[case_answer_index],
             "case_type": "kebab",
             "sentence": kebab_tests_sentence
