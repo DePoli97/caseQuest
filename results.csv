@@ -1,0 +1,3 @@
+id,age,gender,experience,case_type,is_correct_answer,time
+10,21,male,8,camel,True,1644
+11,21,male,8,camel,True,1657
