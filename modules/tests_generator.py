@@ -11,23 +11,48 @@ def read_file():
 
 
 def generate_tests():
-    tests = {}
+    tests = []
     for i in range(tests_for_session):
-        # sentence example:
-        # [fast run, fasten rung, fast rug, fist run]
-        case_type = random.choice(["kebab", "camel"])
         sentence = random.choice(sentences)
-        for j in range(len(sentence)):
-            if case_type == "kebab":
-                sentence[j] = sentence[j].replace(" ", "-")
-            else:
-                sentence[j] = sentence[j][0] + sentence[j][1].capitalize()
+        # for j in range(len(sentence)):
+        #     if case_type == "kebab":
+        #         sentence[j] = sentence[j].replace(" ", "-")
+        #     else:
+        #         sentence[j] = sentence[j][0] + sentence[j][1].capitalize()
         test = {
             "case_answer": random.choice(sentence),
-            "case_type": case_type,
             "sentence": sentence
         }
-        tests[i] = test
+        tests.append(test)
     return tests
+
+
+def generate_camel_tests(tests):
+    camel_tests = []
+    for test in tests:
+        case_answer_index = test["sentence"].index(test["case_answer"])
+        camel_tests_sentence = [test["sentence"][i].split(" ")[0] + test["sentence"][i].split(" ")[1].capitalize() for i
+                                in range(len(test["sentence"]))]
+        camel_test = {
+            "case_answer": camel_tests_sentence[case_answer_index],
+            "case_type": "camel",
+            "sentence": camel_tests_sentence
+        }
+        camel_tests.append(camel_test)
+    return camel_tests
+
+
+def generate_kebab_tests(tests):
+    kebab_tests = []
+    for test in tests:
+        case_answer_index = test["sentence"].index(test["case_answer"])
+        kebab_tests_sentence = [test["sentence"][i].replace(" ", "-") for i in range(len(test["sentence"]))]
+        kebab_test = {
+            "case_answer": kebab_tests_sentence[case_answer_index],
+            "case_type": "kebab",
+            "sentence": kebab_tests_sentence
+        }
+        kebab_tests.append(kebab_test)
+    return kebab_tests
 
 # add_result("Form")

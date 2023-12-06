@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-from modules.tests_generator import generate_tests, read_file
+from modules.tests_generator import generate_tests, read_file, generate_camel_tests, generate_kebab_tests
 from modules.save_results import append_result
 
 app = FastAPI()
@@ -25,7 +25,10 @@ async def root():
 
 @app.get("/tests")
 async def tests():
-    return generate_tests()
+    all_tests = generate_tests()
+    camel_tests = generate_camel_tests(all_tests)
+    kebab_tests = generate_kebab_tests(all_tests)
+    return camel_tests, kebab_tests
 
 
 @app.post("/result")
