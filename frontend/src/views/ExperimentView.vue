@@ -50,7 +50,10 @@ export default defineComponent({
         this.test = this.kebab_test[0]
         this.index = 0
         this.completed_camel = true
-      } else if (!this.completed_camel) {
+      } else if (this.index === this.camel_test.length-1 && this.completed_camel) {
+        this.$router.push('end')
+      }
+      else if (!this.completed_camel) {
         this.test = this.camel_test[this.index]
       } else {
         this.test = this.kebab_test[this.index]
