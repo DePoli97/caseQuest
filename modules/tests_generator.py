@@ -14,11 +14,6 @@ def generate_tests():
     tests = []
     for i in range(tests_for_session):
         sentence = random.choice(sentences)
-        # for j in range(len(sentence)):
-        #     if case_type == "kebab":
-        #         sentence[j] = sentence[j].replace(" ", "-")
-        #     else:
-        #         sentence[j] = sentence[j][0] + sentence[j][1].capitalize()
         test = {
             "case_answer": random.choice(sentence),
             "sentence": sentence

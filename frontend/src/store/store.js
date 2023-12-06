@@ -6,7 +6,8 @@ export default createStore({
             kebab_tests: [],
             age: 0,
             gender: '',
-            experience: 0
+            experience: 0,
+            test_id: 0
         }
     },
     getters: {
@@ -24,6 +25,9 @@ export default createStore({
         },
         getExperience(state) {
             return state.experience
+        },
+        getTestId(state) {
+            return state.test_id
         }
     },
     mutations: {
@@ -41,12 +45,16 @@ export default createStore({
         },
         setExperience(state, experience) {
             state.experience = experience
+        },
+        setTestId(state, test_id) {
+            state.test_id = test_id
         }
     },
     actions: {
         async fetchTest(context) {
             let response = await fetch('http://localhost:8000/tests')
             let tests = await response.json()
+            console.log(tests)
             context.commit('setCamelTests', tests[0])
             return context.commit('setKebabTests', tests[1])
         },
@@ -54,6 +62,27 @@ export default createStore({
             context.commit('setAge', info.age)
             context.commit('setGender', info.gender)
             context.commit('setExperience', info.experience)
-        }
+        },
+        async saveResult(context, result) {
+            let response = await fetch('http://localhost:8000/result', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(result)
+            })
+            let data = await response.json()
+            console.log(data)
+        },
+        async getLastTestId(context) {
+            let response = await fetch('http://localhost:8000/last_test_id')
+            let data = await response.json()
+            console.log(data)
+            context.commit('setTestId', data)
+        },
+        async updateLastTestId(context) {
+            let response = await fetch('http://localhost:8000/update_last_test_id')
+            let data = await response.json()
+            console.log(data)}
     }
 })
