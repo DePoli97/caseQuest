@@ -16,7 +16,8 @@ def generate_tests():
         sentence = random.choice(sentences)
         test = {
             "case_answer": random.choice(sentence),
-            "sentence": sentence
+            "sentence": sentence,
+            "question_number": i + 1,
         }
         tests.append(test)
     return tests
@@ -32,7 +33,8 @@ def generate_camel_tests(tests):
             "answer": test["case_answer"],
             "case_answer": camel_tests_sentence[case_answer_index],
             "case_type": "camel",
-            "sentence": camel_tests_sentence
+            "sentence": camel_tests_sentence,
+            "question_number": test["question_number"],
         }
         camel_tests.append(camel_test)
     return camel_tests
@@ -47,7 +49,8 @@ def generate_kebab_tests(tests):
             "answer": test["case_answer"],
             "case_answer": kebab_tests_sentence[case_answer_index],
             "case_type": "kebab",
-            "sentence": kebab_tests_sentence
+            "sentence": kebab_tests_sentence,
+            "question_number": test["question_number"]
         }
         kebab_tests.append(kebab_test)
     return kebab_tests

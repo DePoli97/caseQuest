@@ -28,8 +28,10 @@ class ResultModel(BaseModel):
     gender: str
     experience: int
     case_type: str
+    question_number: int
     is_correct_answer: bool
     time: int
+    device: str
 
 
 @app.get("/")
