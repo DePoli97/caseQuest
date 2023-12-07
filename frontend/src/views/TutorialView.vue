@@ -55,11 +55,14 @@ export default {
 <template>
   <h1> This is a Warm Up! </h1>
   <h2> Try out the selection process as long as you wish</h2>
-
-  <Selector :test="camel_test" :tutorial="true" v-if="current_camel"/>
-  <Selector :test="kebab_test" :tutorial="true" v-else/>
-
-  <button @click="changeTest">Switch to <span v-if="current_camel">kebab</span><span v-else>camel</span> case</button>
+  <hr>
+  <div class="centered-selector">
+    <Selector :test="camel_test" :tutorial="true" v-if="current_camel"/>
+    <Selector :test="kebab_test" :tutorial="true" v-else/>
+  </div>
+  <hr>
+  <p> Note that during the experiment you will not get any feedback on the correctness of your choice</p>
+  <button @click="changeTest">Switch to <span v-if="current_camel">kebab-case</span><span v-else>camelCase</span></button>
 
   <h3> When you are ready, press here to start the experiment </h3>
   <button @click="goToExperiment"> Go To Experiment </button>
@@ -67,5 +70,20 @@ export default {
 </template>
 
 <style>
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.centered-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+button {
+  margin-block: 40px; /* Adjust as needed */
+}
 
 </style>

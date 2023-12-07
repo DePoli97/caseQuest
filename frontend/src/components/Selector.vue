@@ -57,22 +57,18 @@ export default {
 
 <template>
   <div class="grid-container" v-if="test.sentence">
-    <div></div>
+    <div id="sentence" class="big-grid-item">{{test.answer}}</div>
     <div id="ArrowUp" class="grid-item" @click="selectResponse($event)">{{test.sentence[0]}}</div>
-    <div></div>
     <div id="ArrowLeft" class="grid-item" @click="selectResponse($event)">{{ test.sentence[1] }}</div>
-
-    <div id="sentence" class="grid-item">{{test.answer}}</div>
-
     <div id="ArrowRight" class="grid-item" @click="selectResponse($event)">{{ test.sentence[2] }}</div>
-    <div></div>
     <div id="ArrowDown" class="grid-item" @click="selectResponse($event)">{{ test.sentence[3] }}</div>
-    <div></div>
   </div>
   <p id="time"></p>
 </template>
 
 <style scoped>
+
+
 body {
   width: 100vw;
   height: 100vh;
@@ -84,18 +80,22 @@ body {
 
 .grid-container {
   display: grid;
-  align-items: center;
-  justify-content: center;
-  width: 70%;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* Adjust the gap as needed */
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .grid-item {
-  text-align: center;
-  border: 1px solid #ccc;
   padding: 20px;
-  cursor: pointer ;
+  text-align: center;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.big-grid-item {
+  padding: 20px;
+  text-align: center;
+  grid-column: 1 / span 2;
+  font-size: 3em;
 }
 
 div {

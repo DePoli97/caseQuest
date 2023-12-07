@@ -7,7 +7,8 @@ export default createStore({
             age: 0,
             gender: '',
             experience: 0,
-            test_id: 0
+            test_id: 0,
+            device: '',
         }
     },
     getters: {
@@ -28,6 +29,9 @@ export default createStore({
         },
         getTestId(state) {
             return state.test_id
+        },
+        getDevice(state) {
+            return state.device
         }
     },
     mutations: {
@@ -48,6 +52,9 @@ export default createStore({
         },
         setTestId(state, test_id) {
             state.test_id = test_id
+        },
+        setDevice(state, device) {
+            state.device = device
         }
     },
     actions: {
@@ -83,6 +90,14 @@ export default createStore({
         async updateLastTestId(context) {
             let response = await fetch('http://localhost:8000/update_last_test_id')
             let data = await response.json()
-            console.log(data)}
+            console.log(data)
+        },
+        setDevice(context, device) {
+            console.log(device)
+            let device_name = device.selectedDevice
+            if (device_name === 'other')
+                device_name = device.details
+            context.commit('setDevice', device_name)
+        }
     }
 })
