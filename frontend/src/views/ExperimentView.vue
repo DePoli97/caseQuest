@@ -67,11 +67,11 @@ export default defineComponent({
       this.startTime = performance.now()
       await this.$store.dispatch('saveResult', result)
       this.index += 1
-      if (this.index === this.starting_test.length-1 && !this.completed_starting) {
+      if (this.index === this.starting_test.length && !this.completed_starting) {
         this.test = this.other_test[0]
         this.index = 0
         this.completed_starting = true
-      } else if (this.index === this.starting_test.length-1 && this.completed_starting) {
+      } else if (this.index === this.starting_test.length && this.completed_starting) {
         this.$router.push('end')
       }
       else if (!this.completed_starting) {
