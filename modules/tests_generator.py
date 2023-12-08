@@ -36,7 +36,7 @@ def generate_type_tests(tests, type):
 
         type_test = {
             "answer": test['sentence'][test['case_answer']],
-            "case_answer": type_tests_sentence.index(type_tests_sentence[test['case_answer']]),
+            "case_answer": type_tests_sentence[test['case_answer']],
             "case_type": type,
             "sentence": type_tests_sentence,
             "question_number": test["question_number"],
