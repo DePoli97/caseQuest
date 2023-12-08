@@ -41,7 +41,6 @@ def generate_type_tests(tests, type):
             "sentence": type_tests_sentence,
             "question_number": test["question_number"],
         }
-        print(type_test)
         type_tests.append(type_test)
     return type_tests
 
