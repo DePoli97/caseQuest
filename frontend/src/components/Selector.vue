@@ -3,6 +3,7 @@ export default {
   data: function () {
     return {
       completed: false,
+      last_selection: null
     }
   },
   mounted() {
@@ -21,12 +22,12 @@ export default {
   },
   methods: {
     async selectResponse(event) {
-      let endTime = performance.now()
-
-      if (this.completed)
-        return
+      if (this.last_selection) {
+        this.last_selection.style.backgroundColor = '';
+      }
 
       let target = event.target
+      this.last_selection = target
       let target_content = target.innerHTML
       if (this.tutorial) {
         if (target_content === this.test.case_answer) {
@@ -35,20 +36,7 @@ export default {
           target.style.backgroundColor = 'red'
         }
         this.completed = true
-        return
       }
-      let result = {
-        id: this.$store.state.test_id,
-        age: this.$store.state.age,
-        gender: this.$store.state.gender,
-        experience: this.$store.state.experience,
-        case_type: this.test.case_type,
-        is_correct_answer: target_content === this.test.case_answer,
-        time: endTime - this.startTime,
-      }
-      await this.$store.dispatch('saveResult', result)
-      this.completed = true
-      this.completedObj.completed = true
     }
   }
 }
