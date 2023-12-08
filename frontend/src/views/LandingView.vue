@@ -2,7 +2,7 @@
 export default {
   data: function () {
     return {
-      age: 0,
+      age: null,
       gender: '',
       experience: '',
     }

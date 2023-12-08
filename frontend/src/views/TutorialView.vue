@@ -65,7 +65,7 @@ export default {
   <button @click="changeTest">Switch to <span v-if="current_camel">kebab-case</span><span v-else>camelCase</span></button>
 
   <h3> When you are ready, press here to start the experiment </h3>
-  <button @click="goToExperiment"> Go To Experiment </button>
+  <button @click="goToExperiment"> Start Experiment </button>
   <h3 v-if="counter !== null">{{counter}}</h3>
 </template>
 
