@@ -15,7 +15,7 @@ def generate_tests():
     for i in range(tests_for_session):
         sentence = random.choice(sentences)
         test = {
-            "case_answer": random.choice(sentence),
+            "case_answer": random.randint(0, len(sentence) - 1),
             "sentence": sentence,
             "question_number": i + 1,
         }
@@ -24,22 +24,24 @@ def generate_tests():
 
 
 def generate_type_tests(tests, type):
-    camel_tests = []
+    type_tests = []
     for test in tests:
-        camel_tests_sentence = []
+        type_tests_sentence = []
         for couple in test["sentence"]:
             words = couple.split(" ")
             text = words[0]
             for i in range(1, len(words)):
                 text += words[i].capitalize() if type == "camel" else '-' + words[i]
-            camel_tests_sentence.append(text)
+            type_tests_sentence.append(text)
 
-        camel_test = {
-            "answer": test["case_answer"],
-            "case_answer": test['case_answer'],
-            "case_type": "camel",
-            "sentence": camel_tests_sentence,
+        type_test = {
+            "answer": test['sentence'][test['case_answer']],
+            "case_answer": type_tests_sentence.index(type_tests_sentence[test['case_answer']]),
+            "case_type": type,
+            "sentence": type_tests_sentence,
             "question_number": test["question_number"],
         }
-        camel_tests.append(camel_test)
-    return camel_tests
+        print(type_test)
+        type_tests.append(type_test)
+    return type_tests
+
