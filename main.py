@@ -26,7 +26,7 @@ class ResultModel(BaseModel):
     id: int
     age: int
     gender: str
-    experience: int
+    experience: str
     case_type: str
     question_number: int
     is_correct_answer: bool

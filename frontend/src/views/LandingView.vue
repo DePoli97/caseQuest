@@ -4,7 +4,7 @@ export default {
     return {
       age: 0,
       gender: '',
-      experience: 0,
+      experience: '',
     }
   },
   methods: {
@@ -28,8 +28,8 @@ export default {
 <template>
   <h1>Code Reading Experiment</h1>
   <p>Welcome to our experiment on code identifier readability!</p>
-  <p>In this study, we aim to investigate whether reading speed is affected by the style of composed identifiers.</p>
-  <p>The experiment will take around 6 minutes</p>
+  <p>We aim to investigate whether reading speed is affected by the style of composed identifiers.</p>
+  <p>The experiment will take about 5 minutes</p>
   <p>Please take a moment to provide some demographic information before starting the experiment.</p>
 
   <form method="get" @submit.prevent="saveResult">
@@ -43,8 +43,12 @@ export default {
       <option value="other">Other</option>
     </select>
 
-    <label for="experience">Coding Experience (years):</label>
-    <input type="number" id="experience" name="experience" required v-model="experience" placeholder="0" min="0">
+    <label for="experience">Coding Experience:</label>
+    <select v-model="experience" id="experience" name="experience" required>
+      <option value="No">No experience</option>
+      <option value="1-3">1-3 years</option>
+      <option value="3+">3+ years</option>
+    </select>
 
     <button type="submit">Start Experiment</button>
   </form>
