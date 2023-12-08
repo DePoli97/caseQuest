@@ -7,7 +7,7 @@ sentences = []
 def read_file():
     with open("words.txt", "r") as file:
         for line in file:
-            sentences.append([couples.strip() for couples in line.split("|")])
+            sentences.append([words.strip() for words in line.split("|")])
 
 
 def generate_tests():
@@ -18,6 +18,7 @@ def generate_tests():
             "case_answer": random.choice(sentence),
             "sentence": sentence,
             "question_number": i + 1,
+            "#words": len(sentence),
         }
         tests.append(test)
     return tests

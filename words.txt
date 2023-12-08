@@ -34,10 +34,10 @@ open book | opus boon | open bop | upon book
 loud thunder | lout under | loud thud | lid thump
 golden sun | gory son | golden sung | gone sun
 happy face | hippy facet | happy facet | harpy face
-slow turtle | slew turret | slow turvy | slob turtle
+slow turtle | slew turret | slow turret | slob turtle
 black cat | block coat | black chat | back cat
 windy day | wined daisy | windy daze | wild day
-shiny moon | shin moony | shiny moose | shyn moon
+shiny moon | shin moon | shiny moose | shin moose
 cool breeze | cowl breezy | cool breech | coil breeze
 strong wind | stung wind | strong winder | stork wind
 deep ocean | dip onion | deep ochre | deer ocean
@@ -54,10 +54,10 @@ deep forest | dip foray | deep forge | deer forest
 bright idea | bite ideal | bright ideal | braid idea
 cozy home | cozen gnome | cozy holm | cozy hose
 silent night | silt knight | silent nit | slid night
-big fish | bit fish | big fisc | bug fish
+big fish | bit fish | big fiche | bug fish
 hot pizza | hut pizzazz | hot pizzicato | hat pizza
 open sky | opus skylark | open skylight | upon sky
-silver moon | sliver moony | silver moose | sly moon
+silver moon | sliver moon | silver moose | sly moon
 warm fire | worm flier | warm firth | warp fire
 true friend | truce fiend | true fiend | thru friend
 happy moment | hippy momentum | happy memento | harpy moment
@@ -81,7 +81,7 @@ sweet honey | sweat honey | sweet hone | set honey
 cold wind | coal window | cold wing | coil wind
 bright sun | bite sung | bright sung | braid sun
 cozy chair | cozen chaise | cozy chains | cozy chalk
-loud music | lout musket | loud musk | lid muso
+loud music | lout musket | loud musk | lid must
 clear sky | cleat skylight | clear skyway | claret sky
 fast car | feast carpet | first card | for cart
 deep river | dip riven | deep rives | deer river
@@ -94,7 +94,7 @@ silent night | silt nightly | silent nit | slid night
 bright moon | bite monsoon | bright morn | braid moon
 happy song | hippy scone | happy sown | harpy song
 quick thinking | quirk thinking | quick thin | quill thinking
-cozy room | cozen rook | cozy roo | cozy room
+cozy room | cozen rook | cozy rookie | cozy room
 strong wind | stung windy | strong windy | stork wind
 deep sleep | dip sleeve | deep sleek | deer sleep
 old town | old tow | owl town | oil town
