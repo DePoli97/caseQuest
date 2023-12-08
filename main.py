@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-from modules.tests_generator import generate_tests, read_file, generate_camel_tests, generate_kebab_tests
+from modules.tests_generator import generate_tests, read_file, generate_type_tests
 from modules.save_results import append_result
 from modules.user_identifier import get_last_id, increment_last_id
 
@@ -42,8 +42,8 @@ async def root():
 @app.get("/tests")
 async def tests():
     all_tests = generate_tests()
-    camel_tests = generate_camel_tests(all_tests)
-    kebab_tests = generate_kebab_tests(all_tests)
+    camel_tests = generate_type_tests(all_tests, 'camel')
+    kebab_tests = generate_type_tests(all_tests, 'kebab')
     return camel_tests, kebab_tests
 
 

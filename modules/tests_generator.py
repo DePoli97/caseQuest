@@ -18,42 +18,28 @@ def generate_tests():
             "case_answer": random.choice(sentence),
             "sentence": sentence,
             "question_number": i + 1,
-            "#words": len(sentence),
         }
         tests.append(test)
     return tests
 
 
-def generate_camel_tests(tests):
+def generate_type_tests(tests, type):
     camel_tests = []
     for test in tests:
-        case_answer_index = test["sentence"].index(test["case_answer"])
-        camel_tests_sentence = [test["sentence"][i].split(" ")[0] + test["sentence"][i].split(" ")[1].capitalize() for i
-                                in range(len(test["sentence"]))]
+        camel_tests_sentence = []
+        for couple in test["sentence"]:
+            words = couple.split(" ")
+            text = words[0]
+            for i in range(1, len(words)):
+                text += words[i].capitalize() if type == "camel" else '-' + words[i]
+            camel_tests_sentence.append(text)
+
         camel_test = {
             "answer": test["case_answer"],
-            "case_answer": camel_tests_sentence[case_answer_index],
+            "case_answer": test['case_answer'],
             "case_type": "camel",
             "sentence": camel_tests_sentence,
             "question_number": test["question_number"],
         }
         camel_tests.append(camel_test)
     return camel_tests
-
-
-def generate_kebab_tests(tests):
-    kebab_tests = []
-    for test in tests:
-        case_answer_index = test["sentence"].index(test["case_answer"])
-        kebab_tests_sentence = [test["sentence"][i].replace(" ", "-") for i in range(len(test["sentence"]))]
-        kebab_test = {
-            "answer": test["case_answer"],
-            "case_answer": kebab_tests_sentence[case_answer_index],
-            "case_type": "kebab",
-            "sentence": kebab_tests_sentence,
-            "question_number": test["question_number"]
-        }
-        kebab_tests.append(kebab_test)
-    return kebab_tests
-
-# add_result("Form")
