@@ -7,7 +7,7 @@ sentences = []
 def read_file():
     with open("words.txt", "r") as file:
         for line in file:
-            sentences.append([words.strip() for words in line.split("|")])
+            sentences.append([words.strip().lower() for words in line.split("|")])
 
 
 def generate_tests():
@@ -26,6 +26,7 @@ def generate_tests():
 def generate_type_tests(tests, type):
     camel_tests = []
     for test in tests:
+        case_answer_index = test["sentence"].index(test["case_answer"])
         camel_tests_sentence = []
         for couple in test["sentence"]:
             words = couple.split(" ")
@@ -36,10 +37,11 @@ def generate_type_tests(tests, type):
 
         camel_test = {
             "answer": test["case_answer"],
-            "case_answer": test['case_answer'],
+            "case_answer": camel_tests_sentence[case_answer_index],
             "case_type": "camel",
             "sentence": camel_tests_sentence,
             "question_number": test["question_number"],
+            "#words": len(test["sentence"]),
         }
         camel_tests.append(camel_test)
     return camel_tests
