@@ -41,7 +41,7 @@ def generate_type_tests(tests, case_type):
             "case_type": "camel",
             "sentence": type_tests_sentence,
             "question_number": test["question_number"],
-            "#words": len(test["sentence"]),
+            "n_words": len(test["case_answer"].split(" ")),
         }
         type_tests.append(type_test)
     return type_tests

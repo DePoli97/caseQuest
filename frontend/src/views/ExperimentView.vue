@@ -60,6 +60,7 @@ export default defineComponent({
         experience: this.$store.state.experience,
         case_type: this.test.case_type,
         question_number: this.test.question_number,
+        n_words: this.test.n_words,
         is_correct_answer: target_content === this.test.case_answer,
         time: endTime - this.startTime,
         device: this.$store.state.device,

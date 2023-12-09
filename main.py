@@ -29,6 +29,7 @@ class ResultModel(BaseModel):
     experience: str
     case_type: str
     question_number: int
+    n_words: int
     is_correct_answer: bool
     time: int
     device: str
