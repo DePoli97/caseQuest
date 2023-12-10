@@ -25,6 +25,12 @@ export default defineComponent({
     await this.$store.dispatch('fetchTest')
     this.camel_test = this.$store.state.camel_tests
     this.kebab_test = this.shuffleArray(this.$store.state.kebab_tests)
+    for (let i = 0; i < this.camel_test.length; i++) {
+      this.camel_test[i].sentence = this.shuffleArray(this.camel_test[i].sentence)
+    }
+    for (let i = 0; i < this.kebab_test.length; i++) {
+      this.kebab_test[i].sentence = this.shuffleArray(this.kebab_test[i].sentence)
+    }
 
     let choice = Math.floor(Math.random() * 2)
     if (choice === 0) {
