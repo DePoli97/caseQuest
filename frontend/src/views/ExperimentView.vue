@@ -83,8 +83,10 @@ export default defineComponent({
       }
       else if (!this.completed_starting) {
         this.test = this.starting_test[this.index]
+        this.test.sentence = this.shuffleArray(this.test.sentence)
       } else {
         this.test = this.other_test[this.index]
+        this.test.sentence = this.shuffleArray(this.test.sentence)
       }
     }
   },
