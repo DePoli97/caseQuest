@@ -1,4 +1,4 @@
-move south | mole source | move south | more south
+move south | mole source | move suth | more south
 the sun shine | to sit shone | the sos shining | three soy shame
 jump high | july heat | jump hat | just hue
 fast car | feast cat | first cap | for cast
@@ -58,7 +58,7 @@ silent night | silt nightly | silent nit | slid night
 bright moon | bite monsoon | bright morn | braid moon
 happy song | hippy scone | happy sown | harpy song
 quick thinking | quirk thinking | quick thin | quill thinking
-cozy room | cozen rook | cozy rookie | cozy room
+cozy room | cozen rook | cozy rookie | cozy roof
 strong wind | stung windy | strong windy | stork wind
 deep sleep | dip sleeve | deep sleek | deer sleep
 old town | old tow | owl town | oil town
