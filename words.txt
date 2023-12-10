@@ -10,42 +10,6 @@ dark night | dart knit | dark nit | dare knight
 sweet treat | sweat tree | sweet treetop | set treat
 old book | old brook | owl book | oil bok
 high hill | higher hilt | high hilly | hit hill
-fast run | fasten rung | fast rug | fist run
-blue sky | blue skew | blur sky | blew sky
-loud music | lout musing | loud muse | lid musk
-green grass | green glass | greet grassy | grin grass
-quick fox | quirk foxy | quick flux | quill fox
-clear water | cleat water | clear waiter | claret watery
-hot coffee | hut coffin | hot cough | hat coffee
-calm sea | came see | calm see | clam see
-bright star | bite stare | bright stair | braid stare
-fresh air | fret chair | fresh heir | flash air
-busy bee | bison beet | bus bee | buys bee
-open door | opus dork | open dore | upon door
-tall tree | tale treat | tall trellis | tail tree
-wise owl | wile owl | wise owe | with owl
-lazy cat | lacy coat | lazy chat | lays cat
-true love | truce glove | true lover | thru love
-pink flower | peak flow | pink flour | pick flower
-kind heart | kink hard | kind hart | king heart
-round table | rowed tablet | round tab | rind table
-city life | kitty life | city lie | cite life
-open book | opus boon | open bop | upon book
-loud thunder | lout under | loud thud | lid thump
-golden sun | gory son | golden sung | gone sun
-happy face | hippy facet | happy facet | harpy face
-slow turtle | slew turret | slow turret | slob turtle
-black cat | block coat | black chat | back cat
-windy day | wined daisy | windy daze | wild day
-shiny moon | shin moon | shiny moose | shin moose
-cool breeze | cowl breezy | cool breech | coil breeze
-strong wind | stung wind | strong winder | stork wind
-deep ocean | dip onion | deep ochre | deer ocean
-old friend | old fiend | owl friend | oil friend
-magic wand | magic wane | magic wend | magi wand
-quick glance | quirk glance | quick glint | quill glance
-wise advice | wily advice | wise acid | wist advice
-sweet melody | sweat melody | sweet meld | set melody
 green leaf | green lief | greet leaf | grin leaf
 open field | opus field | open fife | upon field
 warm hug | worm huge | warm hulk | warp hug
@@ -107,7 +71,6 @@ fox frolics fireflies | festive fall foliage | friendly forest fauna | fluffy fo
 gazelle golden gale | gentle gale gusts | glowing golden meadow | graceful gazelle grazes
 hound howling hiker | heavenly humming harmony | hazy harvest haze | hummingbird hovers
 iceberg inkwell igloos | ivory iceberg floats | intricate ice sculptures | inky indigo inkwell
-juggler jackal jumps | jubilant jackal jumps | joyful jester juggles | jocular juggling joy
 kite kindred knits | kites kiss the sky | kaleidoscope knits | kooky kangaroo kicks
 lanterns linger ladybug | lilac lavender lullaby | luminous lunar light | lively ladybug lands
 mirrored misty meadow | majestic mountain peaks | meandering mountain mist | mystical misty mornings
@@ -117,8 +80,6 @@ polar peaceful paradise | playful polar bear | prancing peacock preens | painted
 quokka quasar quivers | quiet quasar queries | quintessential quokka quest | quaint quokka quietly
 rainbow rustic rapids | radiant rainbow rises | rolling rapids rush | rhythmic river ripples
 silver sacred stream | shy snowflake swirls | serene snow summits | shimmering silver stream
-tranquil twilight tableau | tangerine twilight tranquility | tiny turtle tiptoes | twinkling tangerine twilight
-underwater utopia utters | unpredictable universe | undulating underwater utopia | ubiquitous unicorn utters
 violets vibrant vistas | velvety vulture ventures | verdant valley views | vibrant vista visions
 willow wild waltzing | whimsical willow weaves | wandering wild wolf | whispering willow winds
 yarrow yellowed yurt | yellow yaks yawn | yesteryear's yawns yonder | yellow yarrow yields
@@ -130,15 +91,11 @@ ember elusive echoes | effervescent elk eludes | eternal echoes enchant | elusiv
 fern fir fairyland | fern fronds fiesta | fern-filled fairyland | fragrant fern fronds
 glacier graceful glide | geese garnet gem | giants glide gracefully | glistening glacier glows
 hymn hallowed hikes | hushed humming hymn | hopeful hiker hikes | harmonious hymns hum
-jellyfish jolly journey | jovial jellyfish jives | jovial journeyman juggles | jinxed jackal juggles
 kinetic kite kisses | knitted kelp kingdom | kaleidoscopic kitten cavorts | keen kite keepsakes
-lustrous lunar lighthouse | lingering lagoon laps | lavish lilac lanterns | luminescent lunar lanterns
 meadow melody misty | melodic meadow melodies | moonlit magnolia musings | mystical misty mountains
 nimbus nymph navigates | nocturnal nymph nap | nectarous nightingale nest | nimble nymphal novelties
 opal orbs onyx | orchard owl observes | onyx obsidian orb | opulent onyx opus
 pathway pebble panda | pristine pebble pathway | pastel paints peacock | poetic peacock poses
 quasar questing quokka | quirky quasar quest | quiet quinoa quiche | quantum quokka queries
 radiant ripples realm | radiant ruby river | rhythmic rocks realm | resplendent rosewood realm
-tranquil topaz tableau | tulip timeless tapestry | tangerine tranquil twilight | timeless topaz tapestry
-underwater utopia utters | utopian unicorn utters | uncommon universe utters | undulating underwater utopia
 velvet violets vibrate | vulture voyages vividly | verdant views valley | velvety violets vibrate
