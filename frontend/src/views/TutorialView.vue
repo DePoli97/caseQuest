@@ -55,6 +55,7 @@ export default {
 <template>
   <h1> This is a Warm Up! </h1>
   <h2> Try out the selection process as long as you wish</h2>
+  <p>Click on one of the four words that better resemble the word at the top</p>
   <hr>
   <div class="centered-selector">
     <Selector :test="camel_test" :tutorial="true" v-if="current_camel"/>
