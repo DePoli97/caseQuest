@@ -26,7 +26,7 @@ export default {
   <div>
   <ul>
     <li> You'll face 20 questions in total — 10 for each type of identifier. </li>
-    <li> You'll begin with a random selection between camelCase or kebab-case. </li>
+    <li> You'll begin with a random selection between camel<b>C</b>ase or kebab<b>-</b>case. </li>
     <li> Once started, you'll complete all 10 tests in a row for the chosen style before moving on to the other 10 tests
       in the opposite identifier style. </li>
   </ul>
@@ -54,6 +54,9 @@ export default {
 </template>
 
 <style scoped>
+b {
+  color: red;
+}
 
 h3, h4 {
   margin-block: 20px;
