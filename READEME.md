@@ -1,11 +1,15 @@
-### RUN BACKEND
+# how to set up the application
+We suggest to set up a virtual environment to run the application since the packages may cause conflicts with other applications. In order to do so we encourage you to use jetbrains pycharm IDE to as it make it easier to set up the virtual environment.
+After installing all the requirements, you can run the application by running the following commands.
+
+#### RUN BACKEND
 ```bash
+source ./venv/bin/activate
 python3 main.py
 ```
 
-### RUN FRONTEND
+#### RUN FRONTEND
 ```bash
-source ./venv/bin/activate
 cd ./frontend/src
 npm run dev
 ```
