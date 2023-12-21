@@ -1,5 +1,5 @@
 # how to set up the application
-We suggest to set up a virtual environment to run the application since the packages may cause conflicts with other applications. In order to do so we encourage you to use jetbrains pycharm IDE to as it make it easier to set up the virtual environment.
+We suggest to set up a virtual environment to run the application since the packages may cause conflicts with other applications. In order to do so we encourage you to use jetbrains pycharm IDE as it automatically detects python's virtual enviroments and installs requirements.
 After installing all the requirements, you can run the application by running the following commands.
 
 #### RUN BACKEND
